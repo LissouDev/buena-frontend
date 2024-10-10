@@ -2,7 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation'
-import { useFormContext } from '../../context/FormContext';
+import { useFormContext } from '../../../context/FormContext';
 
 const Step3: React.FC = () => {
   const { formData, updateFormData } = useFormContext();
