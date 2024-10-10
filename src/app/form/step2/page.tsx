@@ -3,6 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation'
 import { useFormContext } from '../../../context/FormContext';
+import ProgressBar from '@/components/ProgressBar';
 
 const Step2: React.FC = () => {
   const { formData, updateFormData } = useFormContext();
@@ -29,6 +30,7 @@ const Step2: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="m-20 p-10 border-gray-200 border-2">
+      <ProgressBar currentStep={2} />
 
       <h2 className="text-2xl mb-4">Step 2: Enter your email</h2>
       <div>

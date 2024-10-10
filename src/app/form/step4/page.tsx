@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation'
 import { useFormContext } from '../../../context/FormContext';
 import axios from 'axios';
+import ProgressBar from '@/components/ProgressBar';
 import { useState } from 'react';
 
 const Step4: React.FC = () => {
@@ -58,6 +59,7 @@ const Step4: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="m-20 p-10 border-gray-200 border-2">
+      <ProgressBar currentStep={4} />
 
       <h2 className="text-2xl mb-4">Step 4: Enter your salary range</h2>
       <div>
