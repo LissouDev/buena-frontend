@@ -3,6 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation'
 import { useFormContext } from '../../../context/FormContext';
+import axios from 'axios';
 import { useState } from 'react';
 
 const Step4: React.FC = () => {
@@ -40,8 +41,14 @@ const Step4: React.FC = () => {
   const onSubmit = async (data: { salary: string }) => {
     updateFormData(data);
     console.log('Final Data: ', { ...formData, ...data });
-    // TODO Axios call to submit data
+    try {
+      await axios.post('http://localhost:3000/users', { ...formData, ...data });
+    } catch (error) {
+      console.error('Error submitting the form', error);
+    }
+
     alert('Form Submitted!');
+    // debugger;
     router.push('/form/complete');
   };
 

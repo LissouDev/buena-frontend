@@ -2,7 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation'
-import { useFormContext } from '../../../context/FormContext';
+import { useFormContext } from '@/context/FormContext';
 
 const Step1: React.FC = () => {
   const { formData, updateFormData } = useFormContext();
@@ -15,6 +15,7 @@ const Step1: React.FC = () => {
     console.log("onSubmit +++++++ 1");
     console.log("STEP1 data", data);
     updateFormData(data);
+    console.log("STEP1 data updated", data);
     router.push('/form/step2');
   };
   console.log("formData 1", formData);
