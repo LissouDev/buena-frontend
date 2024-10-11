@@ -13,31 +13,31 @@ const Step2: React.FC = () => {
   const router = useRouter();
 
   const navigateToPrevious = () => {
-    console.log("navigateToPrevious");
-    // debugger;
       router.push("/form/step1");
   };
 
   const onSubmit = (data: { email: string }) => {
-    console.log("+++++++ 2 onSubmit");
-    console.log("STEP2 data ", data);
-
     updateFormData(data);
     router.push('/form/step3');
   };
-  console.log("formData 2", formData);
-
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-10 border-gray-200 border-2 bg-white">
       <ProgressBar currentStep={2} />
 
       <h2 className="text-2xl mb-4">Step 2: Enter your email</h2>
-      <div className='flex'>
-        <input {...register('email', { required: 'Email is required', pattern: {
-                value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/,
-                message: 'It seems your email address is invalid, verify you have entered it correctly',
-              }, })} className="border p-2 grow" placeholder={formData.email ? formData.email : "Enter your email"}/>
+      <div className="flex">
+        <input 
+          {...register('email', { 
+            required: 'Email is required', 
+            pattern: {
+              value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/,
+              message: 'It seems your email address is invalid, verify you have entered it correctly',
+            },
+          })}
+          className="border p-2 grow" 
+          placeholder={formData.email ? formData.email : "Enter your email"}
+        />
       </div>
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       <div className="grid grid-cols-2 gap-4">

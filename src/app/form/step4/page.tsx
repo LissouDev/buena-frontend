@@ -49,13 +49,8 @@ const Step4: React.FC = () => {
     }
 
     alert('Form Submitted!');
-    // debugger;
     router.push('/form/complete');
   };
-
-
-
-  console.log("formData 4", formData);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-10 border-gray-200 border-2">

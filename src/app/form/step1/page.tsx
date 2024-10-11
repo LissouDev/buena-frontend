@@ -13,26 +13,29 @@ const Step1: React.FC = () => {
   const router = useRouter();
 
   const onSubmit = (data: { name: string }) => {
-    console.log("onSubmit +++++++ 1");
-    console.log("STEP1 data", data);
     updateFormData(data);
-    console.log("STEP1 data updated", data);
     router.push('/form/step2');
   };
-  console.log("formData 1", formData);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-10 border-gray-200 border-2 bg-white">
       <ProgressBar currentStep={1} />
       <h2 className="text-2xl mb-4">Step 1: Enter your name</h2>
-      <div className='flex'>
-      <input {...register('name', { required: 'Name is required', pattern: {
-        value: /^\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/,
-        message: 'It seems your name is invalid, please enter your full name',
-      } })} className="border p-2 grow" placeholder={formData.name ? formData.name : "Enter your name"}/>
+      <div className="flex">
+      <input 
+        {...register('name', { 
+          required: 'Name is required', 
+          pattern: {
+            value: /^\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/,
+            message: 'It seems your name is invalid, please enter your full name',
+          }
+        })}
+        className="border p-2 grow" 
+        placeholder={formData.name ? formData.name : "Enter your name"}
+      />
       </div>
       {errors.name && <p className="text-red-500">{errors.name.message}</p>}
-      <div className="flex ">
+      <div className="flex">
         <button type="submit" className="bg-blue-500 text-white grow py-2 px-4 mt-4 rounded">Next</button>
       </div>
     </form>
