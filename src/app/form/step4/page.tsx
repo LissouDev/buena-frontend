@@ -43,7 +43,7 @@ const Step4: React.FC = () => {
     updateFormData(data);
     console.log('Final Data: ', { ...formData, ...data });
     try {
-      await axios.post('http://localhost:3000/users', { ...formData, ...data });
+      await axios.post('http://localhost:4000/api/users/', { ...formData, ...data });
     } catch (error) {
       console.error('Error submitting the form', error);
     }
@@ -81,7 +81,7 @@ const Step4: React.FC = () => {
        {errors.salary && <p className="text-red-500">{errors.salary.message}</p>}
 
       </div>
-      <div className="flex space-x-10">
+      <div className="grid grid-cols-2 gap-4">
         <button type="button" className="bg-gray-300 text-gray-800 py-2 px-4 mt-4 rounded" onClick={navigateToPrevious}>
           Previous
         </button>
