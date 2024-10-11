@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <main className="h-screen flex flex-col">
       <Navbar />
       <FormProvider>
-        <div className='bg-white grow'>
+        <div className="h-screen flex justify-center items-center bg-white">
           {children}
         </div>
       </FormProvider>

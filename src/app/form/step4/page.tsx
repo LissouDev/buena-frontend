@@ -58,11 +58,10 @@ const Step4: React.FC = () => {
   console.log("formData 4", formData);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="m-20 p-10 border-gray-200 border-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="p-10 border-gray-200 border-2">
       <ProgressBar currentStep={4} />
 
       <h2 className="text-2xl mb-4">Step 4: Enter your salary range</h2>
-      <div>
         {salaryRanges.map((range) => (
          <div key={range.id} className="mb-2">
            <label className="inline-flex items-center">
@@ -80,7 +79,6 @@ const Step4: React.FC = () => {
        ))}
        {errors.salary && <p className="text-red-500">{errors.salary.message}</p>}
 
-      </div>
       <div className="grid grid-cols-2 gap-4">
         <button type="button" className="bg-gray-300 text-gray-800 py-2 px-4 mt-4 rounded" onClick={navigateToPrevious}>
           Previous

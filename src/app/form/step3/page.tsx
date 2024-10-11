@@ -58,20 +58,18 @@ const Step3: React.FC = () => {
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="m-20 p-10 border-gray-200 border-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="p-10 border-gray-200 border-2 bg-white">
             <ProgressBar currentStep={3} />
 
       <h2 className="text-2xl mb-4">Step 3: Enter your phone number</h2>
-      <div>
-        <label>Phone: </label>
+      <div className='flex'>
         <input {...register('phone', { required: 'Phone is required', pattern: {
                 value: /^\d{10}$/,
                 message: 'It seems your phone number is invalid, phone numbers must be 10 digits',
-              }, })} className="border p-2" placeholder={formData.phone ? formData.phone : "Enter your phone"}/>
-        {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
-
+              }, })} className="border p-2 grow" placeholder={formData.phone ? formData.phone : "Enter your phone"}/>
       </div>
-      <div className="flex space-x-10">
+        {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
+      <div className="grid grid-cols-2 gap-4">
         <button type="button" className="bg-gray-300 text-gray-800 py-2 px-4 mt-4 rounded" onClick={navigateToPrevious}>
           Previous
         </button>
