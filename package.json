@@ -6,7 +6,8 @@
     "dev": "concurrently \"next dev\" \"cd ../backend-buena && nest start --watch\"",
     "build": "next build",
     "start": "concurrently \"next start\" \"cd ../backend-buena && nest start\"",
-    "lint": "next lint",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write .",
     "test": "jest"
   },
   "dependencies": {
@@ -26,9 +27,12 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
