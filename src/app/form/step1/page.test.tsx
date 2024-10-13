@@ -41,7 +41,9 @@ describe('Step1 Component', () => {
   it('shows validation error if the name field is empty', async () => {
     render(<Step1 />);
     const nextButton = screen.getByRole('button', { name: /Next/i });
-    await act( async () => { fireEvent.click(nextButton) });
+    await act(async () => {
+      fireEvent.click(nextButton);
+    });
     expect(screen.getByText(/Name is required/i)).toBeInTheDocument();
     expect(mockPush).not.toHaveBeenCalled();
   });
@@ -49,19 +51,29 @@ describe('Step1 Component', () => {
   it('shows validation error if the name is invalid', async () => {
     render(<Step1 />);
     const nameInput = screen.getByPlaceholderText(/Enter your name/i);
-    await act( async () => { fireEvent.change(nameInput, { target: { value: '123' } }) });
+    await act(async () => {
+      fireEvent.change(nameInput, { target: { value: '123' } });
+    });
     const nextButton = screen.getByRole('button', { name: /Next/i });
-    await act( async () => { fireEvent.click(nextButton) });
-    expect(screen.getByText(/It seems your name is invalid/i)).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.click(nextButton);
+    });
+    expect(
+      screen.getByText(/It seems your name is invalid/i)
+    ).toBeInTheDocument();
     expect(mockPush).not.toHaveBeenCalled();
   });
 
   it('calls updateFormData and navigates to the next step on valid form submission', async () => {
     render(<Step1 />);
     const nameInput = screen.getByPlaceholderText(/Enter your name/i);
-    await act( async () => { fireEvent.change(nameInput, { target: { value: 'Nelson Mandela' } }) });
+    await act(async () => {
+      fireEvent.change(nameInput, { target: { value: 'Nelson Mandela' } });
+    });
     const nextButton = screen.getByRole('button', { name: /Next/i });
-    await act( async () => { fireEvent.click(nextButton) });
+    await act(async () => {
+      fireEvent.click(nextButton);
+    });
     expect(mockUpdateFormData).toHaveBeenCalledWith({ name: 'Nelson Mandela' });
     expect(mockPush).toHaveBeenCalledWith('/form/step2');
   });

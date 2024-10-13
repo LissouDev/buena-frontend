@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import SummaryPage from '../summary/page';
 import { useFormContext } from '@/context/FormContext';
 
-
 // Mocking useFormContext and useRouter
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
@@ -22,7 +21,12 @@ describe('SummaryPage Component', () => {
       push: mockPush,
     });
     (useFormContext as jest.Mock).mockReturnValue({
-      formData: { name: 'Nelson Mandela', email: 'nelson@mandela.com', phone: '01234567890', salary: '0-1000' },
+      formData: {
+        name: 'Nelson Mandela',
+        email: 'nelson@mandela.com',
+        phone: '01234567890',
+        salary: '0-1000',
+      },
       updateFormData: mockUpdateFormData,
     });
   });

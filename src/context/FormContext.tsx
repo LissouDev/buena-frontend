@@ -14,12 +14,14 @@ interface FormContextType {
 
 const FormContext = createContext<FormContextType | undefined>(undefined);
 
-export const FormProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const FormProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    salary: "",
+    name: '',
+    email: '',
+    phone: '',
+    salary: '',
   });
 
   const updateFormData = (data: Partial<FormData>) => {

@@ -41,7 +41,9 @@ describe('Step3 Component', () => {
   it('shows validation error if the phone field is empty', async () => {
     render(<Step3 />);
     const nextButton = screen.getByRole('button', { name: /Next/i });
-    await act( async () => { fireEvent.click(nextButton) });
+    await act(async () => {
+      fireEvent.click(nextButton);
+    });
     expect(screen.getByText(/Phone is required/i)).toBeInTheDocument();
     expect(mockPush).not.toHaveBeenCalled();
   });
@@ -49,19 +51,31 @@ describe('Step3 Component', () => {
   it('shows validation error if the phone is invalid', async () => {
     render(<Step3 />);
     const phoneInput = screen.getByPlaceholderText(/Enter your phone/i);
-    await act( async () => { fireEvent.change(phoneInput, { target: { value: '123' } }) });
+    await act(async () => {
+      fireEvent.change(phoneInput, { target: { value: '123' } });
+    });
     const nextButton = screen.getByRole('button', { name: /Next/i });
-    await act( async () => { fireEvent.click(nextButton) });
-    expect(screen.getByText(/It seems your phone number is invalid, phone numbers must be 10 digits/i)).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.click(nextButton);
+    });
+    expect(
+      screen.getByText(
+        /It seems your phone number is invalid, phone numbers must be 10 digits/i
+      )
+    ).toBeInTheDocument();
     expect(mockPush).not.toHaveBeenCalled();
   });
 
   it('calls updateFormData and navigates to the next step on valid form submission', async () => {
     render(<Step3 />);
     const phoneInput = screen.getByPlaceholderText(/Enter your phone/i);
-    await act( async () => { fireEvent.change(phoneInput, { target: { value: '1234567890' } }) });
+    await act(async () => {
+      fireEvent.change(phoneInput, { target: { value: '1234567890' } });
+    });
     const nextButton = screen.getByRole('button', { name: /Next/i });
-    await act( async () => { fireEvent.click(nextButton) });
+    await act(async () => {
+      fireEvent.click(nextButton);
+    });
     expect(mockUpdateFormData).toHaveBeenCalledWith({ phone: '1234567890' });
     expect(mockPush).toHaveBeenCalledWith('/form/step4');
   });
@@ -75,7 +89,9 @@ describe('Step3 Component', () => {
   it('navigates to previous step when the user clicks on the previous button', async () => {
     render(<Step3 />);
     const previousButton = screen.getByRole('button', { name: /Previous/i });
-    await act( async () => { fireEvent.click(previousButton) });
+    await act(async () => {
+      fireEvent.click(previousButton);
+    });
     expect(mockPush).toHaveBeenCalledWith('/form/step2');
   });
 });
