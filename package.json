@@ -1,11 +1,11 @@
 {
-  "name": "frontend-buena",
+  "name": "buena-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"cd ../backend-buena && nest start --watch\"",
+    "dev": "concurrently \"next dev\" \"cd ../buena-backend && nest start --watch\"",
     "build": "next build",
-    "start": "concurrently \"next start\" \"cd ../backend-buena && nest start\"",
+    "start": "concurrently \"next start\" \"cd ../buena-backend && nest start\"",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "format": "prettier --write .",
     "test": "jest"

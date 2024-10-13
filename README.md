@@ -13,11 +13,11 @@ The main technology is:
 First you need to install the dependencies in both backend and frontend folders.
 
 ```bash
-$ cd backend-buena
+$ cd buena-backend
 
 $ npm install
 
-$ cd ../frontend-buena
+$ cd ../buena-frontend
 
 $ npm install
 ```
