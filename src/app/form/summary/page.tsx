@@ -3,7 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 import { useFormContext } from '../../../context/FormContext';
-import axios from 'axios';
+// import axios from 'axios';
 import ProgressBar from '@/components/ProgressBar';
 
 const SummaryPage: React.FC = () => {
@@ -30,14 +30,16 @@ const SummaryPage: React.FC = () => {
   const onSubmit = async (data: { salary: string }) => {
     updateFormData(data);
     console.log('Final Data: ', { ...formData, ...data });
-    try {
-      await axios.post('http://localhost:4000/api/users/', {
-        ...formData,
-        ...data,
-      });
-    } catch (error) {
-      console.error('Error submitting the form', error);
-    }
+
+    // TODO uncomment to use the database
+    // try {
+    //   await axios.post('http://localhost:4000/api/users/', {
+    //     ...formData,
+    //     ...data,
+    //   });
+    // } catch (error) {
+    //   console.error('Error submitting the form', error);
+    // }
     alert('Form Submitted!');
     router.push('/form/complete');
   };
