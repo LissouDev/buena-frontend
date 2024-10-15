@@ -17,7 +17,7 @@ $ cd buena-backend
 
 $ npm install
 
-$ npm build
+$ npm run build
 
 $ cd ../buena-frontend
 
@@ -28,7 +28,7 @@ $ npm run build
 
 This application uses [concurrently](https://www.npmjs.com/package/concurrently) to simultanously run backend and frontend.
 
-Please note that the backend is mocked for demo purposes.
+The app is hosted on AWS Amplify for demo purposes.
 
 To start the app, run the following command in the frontend folder:
 
