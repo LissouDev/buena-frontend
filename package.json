@@ -3,16 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"cd ../buena-backend && nest start --watch\"",
+    "dev": "next dev",
     "build": "next build",
-    "start": "concurrently \"next start\" \"cd ../buena-backend && nest start\"",
+    "start": "next start",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "format": "prettier --write .",
     "test": "jest"
   },
   "dependencies": {
     "axios": "^1.7.7",
-    "concurrently": "^9.0.1",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
