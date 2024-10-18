@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"next dev\" \"cd ../buena-backend && nest start --watch\"",
     "build": "next build",
-    "start": "concurrently \"next start\" \"cd ../buena-backend && nest start\"",
+    "start": "next start",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "format": "prettier --write .",
     "test": "jest"

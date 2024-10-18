@@ -8,31 +8,13 @@ The main technology is:
 - [React](https://react.dev/)
 - [Typescript](https://console.neon.tech/)
 
-## Project setup
+## Local setup
 
 First you need to install the dependencies in both backend and frontend folders.
 
 ```bash
-$ cd buena-backend
-
 $ npm install
-
 $ npm run build
-
-$ cd ../buena-frontend
-
-$ npm install
-
-$ npm run build
-```
-
-This application uses [concurrently](https://www.npmjs.com/package/concurrently) to simultanously run backend and frontend.
-
-The app is hosted on AWS Amplify for demo purposes.
-
-To start the app, run the following command in the frontend folder:
-
-```bash
 $ npm run start
 ```
 
@@ -47,3 +29,7 @@ To run the tests, run the following command in the frontend or backend folder:
 ```bash
 $ npm run test
 ```
+
+## Deployment 
+
+WIP - The frontend is deployed on AWS Amplify.
