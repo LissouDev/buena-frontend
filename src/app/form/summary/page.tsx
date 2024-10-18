@@ -46,7 +46,7 @@ const SummaryPage: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="p-10 border-gray-200 border-2"
+      className="w-96	p-10 border-gray-200 border-2"
     >
       <ProgressBar currentStep={4} />
 
@@ -55,12 +55,13 @@ const SummaryPage: React.FC = () => {
       <li>Email: {formData.email}</li>
       <li>Phone: {formData.phone}</li>
       <li>Salary range: {formData.salary}</li>
-      {(formData.name === '' ||
-        formData.email === '' ||
-        formData.phone === '' ||
-        formData.salary === '') && (
-        <p className="text-red-500">Please fill all the fields</p>
-      )}
+      <p className="text-red-500 min-h-[2rem] mt-2">
+        {(formData.name === '' ||
+          formData.email === '' ||
+          formData.phone === '' ||
+          formData.salary === '') &&
+          'Please fill all the fields'}
+      </p>
       <div className="grid grid-cols-2 gap-4">
         <button
           type="button"

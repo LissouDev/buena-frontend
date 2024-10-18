@@ -49,7 +49,7 @@ const Step4: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="p-10 border-gray-200 border-2"
+      className="w-96	p-10 border-gray-200 border-2"
     >
       <ProgressBar currentStep={4} />
 
@@ -69,8 +69,9 @@ const Step4: React.FC = () => {
           </label>
         </div>
       ))}
-      {errors.salary && <p className="text-red-500">{errors.salary.message}</p>}
-
+      <p className="text-red-500 min-h-[2rem] mt-2">
+        {errors.salary && errors.salary.message}
+      </p>
       <div className="grid grid-cols-2 gap-4">
         <button
           type="button"
