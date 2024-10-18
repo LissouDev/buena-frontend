@@ -24,7 +24,7 @@ const Step1: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="p-10 border-gray-200 border-2 bg-white"
+      className="w-96	p-10 border-gray-200 border-2 bg-white"
     >
       <ProgressBar currentStep={1} />
       <h2 className="text-2xl mb-4">Step 1: Enter your name</h2>
@@ -42,7 +42,9 @@ const Step1: React.FC = () => {
           placeholder={formData.name ? formData.name : 'Enter your name'}
         />
       </div>
-      {errors.name && <p className="text-red-500">{errors.name.message}</p>}
+      <p className="text-red-500 min-h-[2rem] mt-2">
+        {errors.name && errors.name.message}
+      </p>
       <div className="flex">
         <button
           type="submit"

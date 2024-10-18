@@ -30,6 +30,6 @@ To run the tests, run the following command in the frontend or backend folder:
 $ npm run test
 ```
 
-## Deployment 
+## Deployment
 
 WIP - The frontend is deployed on AWS Amplify.

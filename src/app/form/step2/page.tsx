@@ -28,7 +28,7 @@ const Step2: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="p-10 border-gray-200 border-2 bg-white"
+      className="w-96 p-10 border-gray-200 border-2 bg-white"
     >
       <ProgressBar currentStep={2} />
 
@@ -47,7 +47,9 @@ const Step2: React.FC = () => {
           placeholder={formData.email ? formData.email : 'Enter your email'}
         />
       </div>
-      {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+      <p className="text-red-500 min-h-[2rem] mt-2">
+        {errors.email && errors.email.message}
+      </p>
       <div className="grid grid-cols-2 gap-4">
         <button
           type="button"
